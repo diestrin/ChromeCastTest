@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Sender</title>
+  <style>
+  body {
+    background-color: #fff;
+  }
+  </style>
 </head>
 <body ng-app="Test1" ng-controller="MainCtrl">
+  <div>
+    <ul>
+      <li ng-repeat="post in posts | limitTo: 5">
+        <dl>
+          <dt>From</dt>
+          <dd>{{post.from.name}}</dd>
+          <dt>Message</dt>
+          <dd>{{post.message}}</dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
   <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
   <script src="../ngCastReceiver.js"></script>

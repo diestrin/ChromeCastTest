@@ -194,6 +194,8 @@
             return deferred.promise;
           },
           sendMessage: function (message) {
+            var deferred = $q.defer();
+
             session.sendMessage(namespace, message, function (e) {
               deferred.resolve(e);
               $rootScope.$digest();
@@ -202,6 +204,8 @@
               deferred.reject(message);
               $rootScope.$digest();
             });
+
+            return deferred.promise;
           }
         };
       };

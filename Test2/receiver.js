@@ -6,6 +6,8 @@
       CastReceiverProvider.init();
     })
     .controller('MainCtrl', function ($scope, CastReceiver) {
-
+      $scope.$on('Cast:New:Message', function (e, posts) {
+        $scope.posts = JSON.parse(posts);
+      });
     });
 })(angular);

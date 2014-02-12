@@ -58,7 +58,7 @@
         console.log('Received Ready event: ' + JSON.stringify(event.data));
         castReceiverManager.setApplicationState("Application status is ready.");
 
-        rootScope.$broadcast('Cast:Ready', newSender);
+        rootScope.$broadcast('Cast:Ready');
         rootScope.$digest();
       };
 
